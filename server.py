@@ -1,4 +1,8 @@
-﻿from service.logger import Logger
+﻿"""
+запускаемый процесс веб-сервера
+"""
+
+from service.logger import Logger
 from service.tabl_maker import TablMaker
 
 import beaker.middleware
@@ -8,6 +12,9 @@ from bottle import run, app, hook, route, post, static_file, template, \
 
 @route('/<filename:re:.*\.css>')
 def stylesheets(filename):
+	"""
+	выдача статики типа css
+	"""
 	return static_file(filename, root='css')
 
 @route('/<filename:re:.*\.png>')
