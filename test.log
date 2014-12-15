@@ -1,0 +1,15 @@
+Liga:
+	direction: up
+	start    :
+		NoteUnit:
+			tone          : b
+			duration      : 8
+			knit          : down
+			add_rod_length: 2
+	finish   :
+		NoteUnit:
+			tone          : a
+			duration      : 8
+			knit          : down
+			add_rod_length: 2
+['foobar']

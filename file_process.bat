@@ -1,0 +1,1 @@
+file_process.py > log.txt
