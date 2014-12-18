@@ -31,7 +31,8 @@ class TablMaker:
 		
 		#	здесь готовим основу, в которую будем все размещать
 		max_width = max(map(lambda x: x.width, staves)) if len(staves) > 0 else 1
-		max_height = (Config.draw_center*2 + 1) * len(staves) + 30
+		max_height = (Config.draw_center*2 + 1) * len(staves)
+		max_height += 30 if (len(name) > 0) else 0
 		tabl_image = Image(width=max_width, height=max_height, 
 			background=Color('white'))
 		

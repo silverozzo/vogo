@@ -19,10 +19,16 @@ def stylesheets(filename):
 
 @route('/<filename:re:.*\.png>')
 def outputimage(filename):
+	"""
+	здесь выдается результат сборки табулатуры
+	"""
 	return static_file(filename, root='output')
 
 @hook('before_request')
 def setup_request():
+	"""
+	здесь устанавливается сессия перед обработкой запроса
+	"""
 	request.session = request.environ['beaker.session']
 
 @post('/')
@@ -37,10 +43,6 @@ def tablprocess():
 	name  = request.forms.get('name')  or ''
 	typer = request.forms.get('typer') or ''
 	code  = request.forms.get('code')  or ''
-	
-	print('_ name=' + name)
-	print('_ code:')
-	print(code)
 	
 	request.session['name']  = name
 	request.session['typer'] = typer

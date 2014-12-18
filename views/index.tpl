@@ -17,9 +17,9 @@
 
       <nav class="menu_main">
         <ul>
-          <li class="active"><a href="#">Type</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Library</a></li>
+          <li class="active"><a href="#">type</a></li>
+          <li><a href="#">help</a></li>
+          <li><a href="#">library</a></li>
         </ul>
       </nav>
     </header>
@@ -33,44 +33,50 @@
 
         <div class="col_66">
           <form action="#" method="post" class="form">
-            <h2>Tabl form</h2>
+            <h2>tabl form</h2>
 
             <p class="col_50">
-              <label for="name">Name:</label><br/>
+              <label for="name">name:</label><br/>
               <input type="text" name="name" id="name" value="{{name}}" />
             </p>
             <p class="col_50">
-              <label for="typer">Typer:</label><br/>
+              <label for="typer">typer:</label><br/>
               <input type="text" name="typer" id="typer" value="{{typer}}" />
             </p>
             <div class="clearfix"></div>
             
             <p>
-              <label for="textarea">Code:</label><br/>
+              <label for="textarea">code:</label><br/>
               <textarea cols="60" rows="10" name="code" id="textarea" wrap="off">{{code}}</textarea>
             </p>
             
             <p class="col_50">
-                <input type="submit" name="tabl" class="button"/>
+                <input type="submit" name="tabl" class="button" value="submit"/>
             </p>
             
             <p class="col_50">
-              <label for="checkbox"><input type="checkbox" name="share" id="checkbox" />&nbsp;Share</label><br/>
+              <label for="checkbox"><input type="checkbox" name="share" id="checkbox" />&nbsp;share</label><br/>
             </p>
             
           </form>
         </div>
         
         <div class="col_33">
-          <h2>Fast help</h2>
+          <h2>fast help</h2>
           
-          <h3>How to use</h3>
+          <h3>usage</h3>
           <ul>
-             <li>type name of your table</li>
-             <li>type your name as typesetter</li>
-             <li>enter code content of your tabl</li>
-             <li>you can set "Share"</li>
-             <li>and press "Submit"</li>
+             <li>enter name of the tabl</li>
+             <li>enter code</li>
+             <li>press "submit"</li>
+          </ul>
+          
+          <h3>possibilities</h3>
+          <ul>
+             <li>"share" &mdash; post to the ibrary</li>
+             <li>"typer" &mdash; enter your name</li>
+             <li>there is detail help</li>
+             <li>there is console output for debug</li>
           </ul>
         </div>        
 

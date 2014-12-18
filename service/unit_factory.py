@@ -11,7 +11,7 @@ image_libary = {
 	'tr'  : ('treble_clef.png',           18),
 	'tr8' : ('treble_clef_8.png',         18),
 	'tr8-': ('treble_clef_8-.png',        18),
-	'bc'  : ('bass_cleff.png',            18),
+	'bc'  : ('bass_clef.png',             18),
 	'tc'  : ('tact_c.png',                11),
 	'|'   : ('tact_delimeter.png',         5),
 	'||'  : ('final.png',                  4),

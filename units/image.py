@@ -19,7 +19,7 @@ class ImageUnit(BaseUnit):
 	def get_unit_width(self):
 		return self._width
 	
-	def draw(self, stave_image):
+	def draw(self, stave_image, force_on_knit = False):
 		with Image(filename=self._file) as unit_image:
 			stave_offset = int(Config.draw_center - (unit_image.height-1) / 2)
 			stave_image.composite(unit_image, self._line_offset, stave_offset)
