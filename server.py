@@ -24,7 +24,6 @@ def outputimage(filename):
 	"""
 	здесь выдается картинко-результат сборки табулатуры
 	"""
-	print("output:" + filename)
 	return static_file(filename, root='output')
 
 
@@ -72,7 +71,6 @@ def helper_image(filename):
 	"""
 	здесь выдаются картинки к странице помощи
 	"""
-	print("help file:" + filename)
 	return static_file(filename, root='views/helping_images')
 
 
