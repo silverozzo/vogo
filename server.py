@@ -4,6 +4,7 @@
 
 from service.logger import Logger
 from service.tabl_maker import TablMaker
+from service.library import Library
 
 import beaker.middleware
 from bottle import run, app, hook, route, post, static_file, template, \
@@ -50,14 +51,20 @@ def tablprocess():
 	name  = request.forms.get('name')  or ''
 	typer = request.forms.get('typer') or ''
 	code  = request.forms.get('code')  or ''
+	share = request.forms.get('share') or ''
 	
 	request.session['name']  = name
 	request.session['typer'] = typer
 	request.session['code']  = code
+	request.session['share'] = share
 	lines = map(lambda x: x.strip(), code.split("\n"))
 	TablMaker.process(lines, name, 'output/' + session_id + '.png')
+	if share == 'on':
+		lib = Library()
+		lib.add_tabl(typer, name, code, session_id)
+	
 	return template('index', output=session_id, log_records=Logger.get(), 
-		name=name, typer=typer, code=code)
+		name=name, typer=typer, code=code, share=share)
 
 
 @route('/helping_images/<filename>')
@@ -77,6 +84,14 @@ def helper():
 	return template('help')
 
 
+@route('/library')
+def library():
+	"""
+	здесь выдается библиотека расшаренных табулатур
+	"""
+	return template('library')
+
+
 @route('/')
 def index():
 	"""
@@ -87,8 +102,9 @@ def index():
 	name  = request.session['name']  if 'name'  in request.session else ''
 	typer = request.session['typer'] if 'typer' in request.session else ''
 	code  = request.session['code']  if 'code'  in request.session else ''
+	share = request.session['share'] if 'share' in request.session else ''
 	return template('index', output=session_id, log_records=Logger.get(), 
-		name=name, typer=typer, code=code)
+		name=name, typer=typer, code=code, share=share)
 
 
 session_opts = {

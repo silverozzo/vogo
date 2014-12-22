@@ -19,7 +19,7 @@
         <ul>
           <li class="active">type</li>
           <li><a href="/help">help</a></li>
-          <li><a href="#">library</a></li>
+          <li><a href="/library">library</a></li>
         </ul>
       </nav>
     </header>
@@ -55,7 +55,14 @@
             </p>
             
             <p class="col_50">
-              <label for="checkbox"><input type="checkbox" name="share" id="checkbox" />&nbsp;share</label><br/>
+              <label for="checkbox">
+                <input type="checkbox" name="share" id="checkbox" 
+%if share == 'on':
+  checked="on"
+%end
+				  />
+                &nbsp;share
+                </label><br/>
             </p>
             
           </form>
