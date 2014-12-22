@@ -17,12 +17,15 @@ def stylesheets(filename):
 	"""
 	return static_file(filename, root='css')
 
-@route('/<filename:re:.*\.png>')
+
+@route('/output/<filename:re:.*\.png>')
 def outputimage(filename):
 	"""
-	здесь выдается результат сборки табулатуры
+	здесь выдается картинко-результат сборки табулатуры
 	"""
+	print("output:" + filename)
 	return static_file(filename, root='output')
+
 
 @hook('before_request')
 def setup_request():
@@ -31,8 +34,12 @@ def setup_request():
 	"""
 	request.session = request.environ['beaker.session']
 
+
 @post('/')
 def tablprocess():
+	"""
+	здесь собсно обрабатывается запрос на генерацию табулатуры из кода
+	"""
 	Logger.clear()
 	session_id = request.get_cookie('beaker.session.id')
 	if session_id is None:
@@ -52,8 +59,29 @@ def tablprocess():
 	return template('index', output=session_id, log_records=Logger.get(), 
 		name=name, typer=typer, code=code)
 
+
+@route('/helping_images/<filename>')
+def helper_image(filename):
+	"""
+	здесь выдаются картинки к странице помощи
+	"""
+	print("help file:" + filename)
+	return static_file(filename, root='views/helping_images')
+
+
+@route('/help')
+def helper():
+	"""
+	здесь выдается страница помощи
+	"""
+	return template('help')
+
+
 @route('/')
 def index():
+	"""
+	здесь выдается основная страница с формой заполнения кода для табулатуры
+	"""
 	Logger.clear()
 	session_id = request.get_cookie('beaker.session.id')
 	name  = request.session['name']  if 'name'  in request.session else ''

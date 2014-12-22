@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="favicon.ico" rel="shortcut icon">
-  <link rel="stylesheet" href="css/style.css">
-  <title></title>  
+  <link rel="stylesheet" href="style.css">
+  <title>vogo help</title>  
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
@@ -17,8 +17,8 @@
 
       <nav class="menu_main">
         <ul>
-          <li><a href="#">type</a></li>
-          <li class="active"><a href="#">help</a></li>
+          <li><a href="/">type</a></li>
+          <li class="active">help</li>
           <li><a href="#">library</a></li>
         </ul>
       </nav>
@@ -105,11 +105,12 @@
     </div>
 
     <footer class="footer clearfix">
-      <div class="copyright">python</div>
-      <div class="copyright">ImageMagick</div>
-      <div class="copyright">Bottle</div>
-      <div class="copyright">Wand</div>
-      <div class="copyright">Simpliste</div>
+      <div class="copyright"><a href="http://www.python.org">python</a></div>
+      <div class="copyright"><a href="http://www.imagemagick.org/">ImageMagick</a></div>
+      <div class="copyright"><a href="http://pypi.python.org/pypi/Beaker">Beaker</a></div>
+      <div class="copyright"><a href="http://bottlepy.org">Bottle</a></div>
+      <div class="copyright"><a href="http://wand-py.org">Wand</a></div>
+      <div class="copyright"><a href="http://simpliste.ru/">Simpliste</a></div>
     </footer>
 
   </div>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="favicon.ico" rel="shortcut icon">
   <link rel="stylesheet" href="style.css">
-  <title></title>  
+  <title>vogo type</title>  
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
@@ -17,8 +17,8 @@
 
       <nav class="menu_main">
         <ul>
-          <li class="active"><a href="#">type</a></li>
-          <li><a href="#">help</a></li>
+          <li class="active">type</li>
+          <li><a href="/help">help</a></li>
           <li><a href="#">library</a></li>
         </ul>
       </nav>
@@ -89,7 +89,7 @@
         <div class="col_66">
 %from random import randint
 %rando=randint(0, 1000)
-          <img src="{{output}}.png?{{rando}}"/>
+          <img src="/output/{{output}}.png?{{rando}}"/>
         </div>
         
         <div class="col_33">
@@ -104,11 +104,12 @@
     </div>
     
     <footer class="footer clearfix">
-      <div class="copyright">python</div>
-      <div class="copyright">ImageMagick</div>
-      <div class="copyright">Bottle</div>
-      <div class="copyright">Wand</div>
-      <div class="copyright">Simpliste</div>
+      <div class="copyright"><a href="http://www.python.org">python</a></div>
+      <div class="copyright"><a href="http://www.imagemagick.org/">ImageMagick</a></div>
+      <div class="copyright"><a href="http://pypi.python.org/pypi/Beaker">Beaker</a></div>
+      <div class="copyright"><a href="http://bottlepy.org">Bottle</a></div>
+      <div class="copyright"><a href="http://wand-py.org">Wand</a></div>
+      <div class="copyright"><a href="http://simpliste.ru/">Simpliste</a></div>
     </footer>
 
   </div>
