@@ -1,5 +1,6 @@
 from guts.config import Config
 
+import os
 import shutil
 import sqlite3
 
@@ -14,13 +15,23 @@ class Library:
 		self.conn.commit()
 	
 	def add_tabl(self, typer, name, code, output):
-		self.curs.execute('insert into tabl (typer, name, code) values (\'' + 
-			typer + '\', \'' + name + '\', \'' + code + '\')')
+		self.del_tabl(name)
+		if (len(code) == 0):
+			return
+		self.curs.execute('insert into tabl (typer, name, code) values ' + 
+			'(?, ?, ?)', (typer, name, code))
 		self.conn.commit()
 		shutil.copyfile('output/' + output + '.png', 
 			'library/' + name + '.png')
 	
-	def get_tabls():
+	def del_tabl(self, name):
+		self.curs.execute('delete from tabl where name=?', [name])
+		self.conn.commit()
+		path = 'library/' + name + '.png'
+		if os.access(path, os.F_OK):
+			os.remove(path)
+	
+	def get_tabls(self):
 		result = []
 		for row in self.curs.execute('select * from tabl'):
 			result.append(row)

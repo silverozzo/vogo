@@ -38,63 +38,40 @@
               <th>tabl</th>
             </tr>
             
+%for rec in tabls:
             <tr>
-              <td>silvero</td>
-              <td>foobar</td>
-              <td><a href="#">big table name</a></td>
-              <td><a href="#">tabl</a></td>
+              <td class="top">{{rec['typer']}}</td>
+              <td class="top">{{rec['name']}}</td>
+              <td class="top">
+                <a id="show_id_{{rec['id']}}" 
+                    onclick="document.getElementById('spoiler_id_{{rec['id']}}').style.display=''; document.getElementById('show_id_{{rec['id']}}').style.display='none';" 
+                    class="link">
+                  [show]
+                </a>
+                <span id="spoiler_id_{{rec['id']}}" style="display: none">
+                  <a onclick="document.getElementById('spoiler_id_{{rec['id']}}').style.display='none'; document.getElementById('show_id_{{rec['id']}}').style.display='';" 
+                      class="link">
+                    [hide]
+                  </a><br/>
+                  <code>{{rec['code']}}</code>
+                </span>
+              </td>
+              <td class="top">
+                <a id="show_id_{{rec['id']}}_img" 
+                    onclick="document.getElementById('spoiler_id_{{rec['id']}}_img').style.display=''; document.getElementById('show_id_{{rec['id']}}_img').style.display='none';" 
+                    class="link">
+                  [show]
+                </a>
+                <span id="spoiler_id_{{rec['id']}}_img" style="display: none">
+                  <a onclick="document.getElementById('spoiler_id_{{rec['id']}}_img').style.display='none'; document.getElementById('show_id_{{rec['id']}}_img').style.display='';" 
+                      class="link">
+                    [hide]
+                  </a><br/>
+                  <img src="/library/{{rec['name']}}.png" />
+                </span>
+              </td>
             </tr>
-
-            <tr>
-              <td>silvero</td>
-              <td>foobar</td>
-              <td><a href="#">big table name</a></td>
-              <td><a href="#">tabl</a></td>
-            </tr>
-
-            <tr>
-              <td>silvero</td>
-              <td>foobar</td>
-              <td><a href="#">big table name</a></td>
-              <td><a href="#">tabl</a></td>
-            </tr>
-
-            <tr>
-              <td>silvero</td>
-              <td>foobar</td>
-              <td><a href="#">big table name</a></td>
-              <td><a href="#">tabl</a></td>
-            </tr>
-            
-            <tr>
-              <td>silvero</td>
-              <td>foobar</td>
-              <td><a href="#">big table name</a></td>
-              <td><a href="#">tabl</a></td>
-            </tr>
-
-            <tr>
-              <td>silvero</td>
-              <td>foobar</td>
-              <td><a href="#">big table name</a></td>
-              <td><a href="#">tabl</a></td>
-            </tr>
-
-            <tr>
-              <td>silvero</td>
-              <td>foobar</td>
-              <td><a href="#">big table name</a></td>
-              <td><a href="#">tabl</a></td>
-            </tr>
-
-            <tr>
-              <td>silvero</td>
-              <td>foobar</td>
-              <td><a href="#">big table name</a></td>
-              <td><a href="#">tabl</a></td>
-            </tr>
-
-            
+%end
           </table>
         </div>
       

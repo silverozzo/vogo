@@ -10,7 +10,6 @@ import beaker.middleware
 from bottle import run, app, hook, route, post, static_file, template, \
 	request, response
 
-
 @route('/<filename:re:.*\.css>')
 def stylesheets(filename):
 	"""
@@ -59,8 +58,7 @@ def tablprocess():
 	lines = map(lambda x: x.strip(), code.split("\n"))
 	TablMaker.process(lines, name, 'output/' + session_id + '.png')
 	if share == 'on':
-		lib = Library()
-		lib.add_tabl(typer, name, code, session_id)
+		library.add_tabl(typer, name, code, session_id)
 	
 	return template('index', output=session_id, log_records=Logger.get(), 
 		name=name, typer=typer, code=code, share=share)
@@ -82,12 +80,21 @@ def helper():
 	return template('help')
 
 
+@route('/library/<filename>')
+def library_record(filename):
+	"""
+	здесь выдается собсно табулатура из библиотеки
+	"""
+	return static_file(filename, root='library')
+
+
 @route('/library')
 def library():
 	"""
 	здесь выдается библиотека расшаренных табулатур
 	"""
-	return template('library')
+	tabls = library.get_tabls()
+	return template('library', tabls=tabls)
 
 
 @route('/')
@@ -105,6 +112,7 @@ def index():
 		name=name, typer=typer, code=code, share=share)
 
 
+library = Library()
 session_opts = {
 		'session.type'    : 'file',
 		'session_data_dir': './session/',

@@ -19,7 +19,7 @@ image_libary = {
 	'||:' : ('repeat_start.png',           7),
 	'|w'  : ('tact_double_delimeter.png',  5),
 	'p04' : ('pause_04.png',              13),
-	'p04' : ('pause_02.png',              13),
+	'p02' : ('pause_02.png',              13),
 	'p1'  : ('pause_1.png',               13),
 	'p2'  : ('pause_2.png',               13),
 	'p4'  : ('pause_4.png',               12),

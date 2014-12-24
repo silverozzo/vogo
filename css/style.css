@@ -65,6 +65,8 @@
 .left {text-align:left;}
 .right {text-align:right;}
 
+.top {vertical-align:top;}
+
 .img_floatleft {float:left; margin:0 10px 5px 0;}
 .img_floatright {float:right; margin:0 0 5px 10px;}
 

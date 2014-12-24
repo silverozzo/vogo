@@ -19,7 +19,7 @@
         <ul>
           <li><a href="/">type</a></li>
           <li class="active">help</li>
-          <li><a href="#">library</a></li>
+          <li><a href="/library">library</a></li>
         </ul>
       </nav>
     </header>
